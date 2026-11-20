@@ -53,6 +53,7 @@
 .centers__info {
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .centers__info::after {
