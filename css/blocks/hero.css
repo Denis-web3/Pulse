@@ -75,15 +75,22 @@
 	z-index: var(--layer-1);
 }
 
-.hero__button {
+/* .hero__button {
 	position: absolute;
 	top: 0;
 	left: 50%;
 	right: 0;
 	transform: translateY(-50%);
+} */
+
+.hero__button {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-@media (width <=1055px) {
+/* @media (width <=1055px) {
 	.hero__button {
 		left: 44%;
 	}
@@ -93,7 +100,7 @@
 	.hero__button {
 		left: 38%;
 	}
-}
+} */
 
 .button-icon {
 	transform: translateX(50%);

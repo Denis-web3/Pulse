@@ -5,7 +5,6 @@
 .discription__content {
 	display: flex;
 	justify-content: space-evenly;
-	flex-wrap: wrap;
 	/* min 375, max 1920 */
 	padding-top: clamp(53px, 27.03px + 6.93vw, 160px);
 	/* min 375, max 1920 */
@@ -15,10 +14,18 @@
 	background-color: var(--main-color);
 }
 
+@media (width <= 992px) {
+	.discription__content {
+		gap: 79px;
+		justify-content: space-evenly;
+	}
+}
+
 @media (width <= 768px) {
 	.discription__content {
-		gap: 10px;
-		justify-content: space-evenly;
+		gap: 30px;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
@@ -30,6 +37,21 @@
 	gap: 10px;
 	color: var(--bg-color);
 	z-index: var(--layer-1);
+}
+
+@media (width <= 992px) {
+	.discription__list {
+		gap: 51px;
+		justify-content: space-evenly;
+	}
+}
+
+@media (width <= 768px) {
+	.discription__list {
+		gap: 0;
+		font-size: 40px;
+		justify-content: space-evenly;
+	}
 }
 
 .discription__item {
@@ -54,7 +76,7 @@
 	}
 }
 
-@media (width <= 960px) {
+@media (width <= 992px) {
 	.discription__item {
 		font-size: 50px;
 	}
@@ -109,49 +131,92 @@
 	}
 }
 
+/* DESCRIPTION INFO */
+
 .discription__info {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	gap: 10px;
+	justify-content: space-evenly;
+	gap: 16px;
+	width: 100%;
 	max-width: 468px;
-	max-height: 622px;
+	min-width: 0;
+	max-height: none;
 	color: var(--bg-color);
 	opacity: 0;
 	visibility: hidden;
+	transform: translateY(15px);
 	transition:
 		opacity var(--transition-time),
+		visibility var(--transition-time),
 		transform var(--transition-time);
-}
-
-@media (width <= 768px) {
-	.discription__info {
-		max-width: 328px;
-	}
 }
 
 .discription__info.visible {
 	opacity: 1;
 	visibility: visible;
-	transform: translateX(-50px);
+	transform: translateY(0);
 }
 
-.discription__info-title {
-	margin-bottom: 10px;
-}
-
-@media (width <= 960px) {
-	.discription__info-title {
-		font-size: 25px;
+/* Планшеты */
+@media (width <= 992px) {
+	.discription__info {
+		max-width: 400px;
 	}
 }
 
-.discription__info-text {
-	font-family: var(--second-family);
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 169%;
-	color: var(--text-color);
+/* Мобильные устройства */
+@media (width <= 768px) {
+	.discription__info {
+		width: 100%;
+		max-width: 468px;
+		padding-inline: 16px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	.discription__info-title {
+		font-size: clamp(22px, 4vw, 25px);
+		margin-bottom: 5px;
+	}
+
+	.discription__info-text {
+		font-size: 15px;
+		line-height: 160%;
+	}
+}
+
+/* Небольшие смартфоны */
+@media (width <= 480px) {
+	.discription__info {
+		padding-inline: 12px;
+		gap: 8px;
+	}
+
+	.discription__info-title {
+		font-size: 22px;
+	}
+
+	.discription__info-text {
+		font-size: 14px;
+		line-height: 155%;
+	}
+}
+
+/* Очень маленькие экраны */
+@media (width <= 375px) {
+	.discription__info {
+		padding-inline: 10px;
+	}
+
+	.discription__info-title {
+		font-size: 20px;
+	}
+
+	.discription__info-text {
+		font-size: 13px;
+		line-height: 150%;
+	}
 }
 
 .discription__statistics {
